@@ -7,7 +7,7 @@ import skinCareImage from "/imgs/CategoriesSlider/skincare.png";
 import hairCareImage from "/imgs/CategoriesSlider/haircare.png";
 function CategoriesSlider() {
   return (
-    <div className="mt-8">
+    <div className="mt-5">
       <Carousel
         cols={6}
         rows={1}
@@ -18,22 +18,22 @@ function CategoriesSlider() {
         dotColorInactive="#F1F1F1"
       >
         <Carousel.Item>
-          <img width={"260px"} height={"245px"} src={manImage} />
+          <img width={"260px"} height={"245px"} src={manImage} className='rounded-[15px]'/>
         </Carousel.Item>
         <Carousel.Item>
-          <img width={"260px"} height={"245px"} src={womenImage} />
+          <img width={"260px"} height={"245px"} src={womenImage} className='rounded-[15px]'/>
         </Carousel.Item>
         <Carousel.Item>
-          <img width={"260px"} height={"245px"} src={skinCareImage} />
+          <img width={"260px"} height={"245px"} src={skinCareImage} className='rounded-[15px]'/>
         </Carousel.Item>
         <Carousel.Item>
-          <img width={"260px"} height={"245px"} src={beautyImage} />
+          <img width={"260px"} height={"245px"} src={beautyImage} className='rounded-[15px]'/>
         </Carousel.Item>
         <Carousel.Item>
-          <img width={"260px"} height={"245px"} src={hairCareImage} />
+          <img width={"260px"} height={"245px"} src={hairCareImage} className='rounded-[15px]'/>
         </Carousel.Item>
         <Carousel.Item>
-          <img width={"260px"} height={"245px"} src={healthImage} />
+          <img width={"260px"} height={"245px"} src={healthImage} className='rounded-[15px]'/>
         </Carousel.Item>
       </Carousel>
     </div>

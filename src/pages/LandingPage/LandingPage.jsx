@@ -1,11 +1,13 @@
 import Container from "../../components/Global/Container/Container";
+import Hero from "../../components/LandingPage/HeroSection/Hero";
 import LandingSectionOne from "../../components/LandingPage/SectionOne/LandingSectionOne";
 
 function LandingPage() {
   return (
     <>
-      <Container>
-        {/* Hero Section Goes HERE!! */}
+     
+        <Hero/>
+        <Container>
         <LandingSectionOne />
       </Container>
     </>
