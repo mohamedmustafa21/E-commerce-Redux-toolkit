@@ -1,15 +1,18 @@
 import Container from "../../components/Global/Container/Container";
-import LandingSectionOne from "../../components/LandingPage/SectionOne/LandingSectionOne";
-
+import CategoriesSlider from "../../components/LandingPage/CategoriesSlider";
+import FeaturesContainer from "../../components/LandingPage/Features/FeaturesContainer";
+import GridDeals from "../../components/LandingPage/GridDeals";
 function LandingPage() {
   return (
     <>
       <Container>
-        {/* Hero Section Goes HERE!! */}
-        <LandingSectionOne />
+        <CategoriesSlider />
+        <FeaturesContainer />
+        <GridDeals />
       </Container>
     </>
   );
 }
-
 export default LandingPage;
+
+//! Done By Ammar

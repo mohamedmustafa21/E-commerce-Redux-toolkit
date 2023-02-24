@@ -2,7 +2,7 @@ import CategoriesSlider from "./CategoriesSlider/CategoriesSlider";
 import FeaturesContainer from "./Features/FeaturesContainer";
 import GridDeals from "./GridDeals/GridDeals";
 
-function LandingSectionOne() {
+function LandingPage() {
   return (
     <>
       <CategoriesSlider />
@@ -11,6 +11,6 @@ function LandingSectionOne() {
     </>
   );
 }
-export default LandingSectionOne;
+export default LandingPage;
 
 //! Done By Ammar
