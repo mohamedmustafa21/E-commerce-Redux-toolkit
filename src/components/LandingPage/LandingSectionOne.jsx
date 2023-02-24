@@ -1,16 +1,17 @@
-import CategoriesSlider from "./CategoriesSlider/CategoriesSlider";
-import FeaturesContainer from "./Features/FeaturesContainer";
-import GridDeals from "./GridDeals/GridDeals";
+import CategoriesSlider from "./SectionOne/CategoriesSlider/CategoriesSlider";
+import FeaturesContainer from './SectionOne/Features/FeaturesContainer';
+import GridDeals from './GridDeals';
 
-function LandingPage() {
+function LandingSectionOne() {
   return (
     <>
       <CategoriesSlider />
-      <FeaturesContainer />
-      <GridDeals />
+      <FeaturesContainer/>
+      <GridDeals/>
+    
     </>
   );
 }
-export default LandingPage;
+export default LandingSectionOne;
 
 //! Done By Ammar
