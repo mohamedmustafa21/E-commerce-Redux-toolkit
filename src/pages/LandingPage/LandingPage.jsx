@@ -6,10 +6,11 @@ function LandingPage() {
   return (
     <>
      
-        <Hero/>
+     <Hero/>
         <Container>
           <LandingSectionOne/>
       </Container>
+      
     </>
   );
 }

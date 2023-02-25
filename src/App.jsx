@@ -1,4 +1,5 @@
-import Navbar from "./components/Navbvar/Navbar";
+import Footer from "./components/Global/Fotter/Footer";
+import Navbar from "./components/Global/Navbvar/Navbar";
 import LandingPage from "./pages/LandingPage/LandingPage";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
       <Navbar/>
       <LandingPage />
+      {/* <Footer/> */}
     </>
   );
 }

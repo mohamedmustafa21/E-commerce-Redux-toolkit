@@ -1,6 +1,5 @@
 import React, { useState,useEffect } from "react";
-import Logo from "../../Assets/logo-png.png";
-import Eg from "../../Assets/egypt.png";
+import Logo from "../../../Assets/logo-png.png";
 
 function Navbar() {
   let links = [
