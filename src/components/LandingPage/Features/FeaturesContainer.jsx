@@ -1,10 +1,10 @@
 import FeatureCard from "./FeatureCard";
-import ClockImage from "../../../../public/imgs/Features/clock.svg";
-import LikeImage from "../../../../public/imgs/Features/like.svg";
-import TruckImage from "../../../../public/imgs/Features/truck.svg";
+import ClockImage from "/imgs/Features/clock.svg";
+import LikeImage from "/imgs/Features/like.svg";
+import TruckImage from "/imgs/Features/truck.svg";
 export default function FeaturesContainer() {
   return (
-    <div className="flex sm:flex-row flex-col gap-12 items-center justify-center mt-16 mb-8">
+    <div className="flex  sm:flex-row flex-col gap-12 items-center justify-center mt-16 mb-8">
       <FeatureCard
         text={"FREE SHIPPING US"}
         desc={"on all order over 1000EGP"}

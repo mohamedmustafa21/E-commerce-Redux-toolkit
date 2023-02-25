@@ -16,9 +16,10 @@ function CategoriesSlider() {
         showDots
         dotColorActive="#2DD253"
         dotColorInactive="#F1F1F1"
+        className=""
       >
         <Carousel.Item>
-          <img width={"260px"} height={"245px"} src={manImage} className='rounded-[15px]'/>
+          <img width={"260px"} height={"245px"} src={manImage} className='rounded-[15px] '/>
         </Carousel.Item>
         <Carousel.Item>
           <img width={"260px"} height={"245px"} src={womenImage} className='rounded-[15px]'/>
