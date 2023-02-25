@@ -67,7 +67,7 @@ function Navbar() {
                 className="md:ml-8 text-[15px] md:my-0 my-7 font-medium hover:text-[#6DD471] duration-150 max-md:text-black"
               >
                 <a href={link.link}>
-                  {link.name}{" "}
+                  {link.name}
                   {link.icon ? (
                     <>
                       <i className={link.icon}></i>
