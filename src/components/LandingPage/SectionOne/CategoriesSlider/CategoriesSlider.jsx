@@ -12,29 +12,42 @@ function CategoriesSlider() {
         cols={6}
         rows={1}
         gap={10}
-        loop
-        showDots
+        scrollSnap={true}
+        responsiveLayout={[
+          {
+            breakpoint: 800,
+            cols: 3,
+            rows: 1,
+            gap: 10,
+            loop: true,
+            autoplay: 3000
+          }
+        ]}
+        showDots ={true}
         dotColorActive="#2DD253"
         dotColorInactive="#F1F1F1"
-        className=""
+        
+
+        
+        
       >
         <Carousel.Item>
-          <img width={"260px"} height={"245px"} src={manImage} className='rounded-[15px] '/>
+          <img width={"260px"} height={"245px"} src={manImage} className='rounded-[15px] max-md:w-full '/>
         </Carousel.Item>
         <Carousel.Item>
-          <img width={"260px"} height={"245px"} src={womenImage} className='rounded-[15px]'/>
+          <img width={"260px"} height={"245px"} src={womenImage} className='rounded-[15px] max-md:w-full'/>
         </Carousel.Item>
         <Carousel.Item>
-          <img width={"260px"} height={"245px"} src={skinCareImage} className='rounded-[15px]'/>
+          <img width={"260px"} height={"245px"} src={skinCareImage} className='rounded-[15px] max-md:w-full'/>
         </Carousel.Item>
         <Carousel.Item>
-          <img width={"260px"} height={"245px"} src={beautyImage} className='rounded-[15px]'/>
+          <img width={"260px"} height={"245px"} src={beautyImage} className='rounded-[15px] max-md:w-full'/>
         </Carousel.Item>
         <Carousel.Item>
-          <img width={"260px"} height={"245px"} src={hairCareImage} className='rounded-[15px]'/>
+          <img width={"260px"} height={"245px"} src={hairCareImage} className='rounded-[15px] max-md:w-full'/>
         </Carousel.Item>
         <Carousel.Item>
-          <img width={"260px"} height={"245px"} src={healthImage} className='rounded-[15px]'/>
+          <img width={"260px"} height={"245px"} src={healthImage} className='rounded-[15px] max-md:w-full'/>
         </Carousel.Item>
       </Carousel>
     </div>
