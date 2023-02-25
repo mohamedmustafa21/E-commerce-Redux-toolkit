@@ -1,10 +1,10 @@
 import Carousel from "better-react-carousel";
-import manImage from "/imgs/CategoriesSlider/man.png";
-import womenImage from "/imgs/CategoriesSlider/women.png";
-import healthImage from "/imgs/CategoriesSlider/health.png";
-import beautyImage from "/imgs/CategoriesSlider/beauty.png";
-import skinCareImage from "/imgs/CategoriesSlider/skincare.png";
-import hairCareImage from "/imgs/CategoriesSlider/haircare.png";
+import manImage from "../../assets/imgs/Home/CategoriesSlider/man.png";
+import womenImage from "../../assets/imgs/Home/CategoriesSlider/women.png";
+import healthImage from "../../assets/imgs/Home/CategoriesSlider/health.png";
+import beautyImage from "../../assets/imgs/Home/CategoriesSlider/beauty.png";
+import skinCareImage from "../../assets/imgs/Home/CategoriesSlider/skincare.png";
+import hairCareImage from "../../assets/imgs/Home/CategoriesSlider/haircare.png";
 
 function CategoriesSlider() {
   const responsiveLayout = [

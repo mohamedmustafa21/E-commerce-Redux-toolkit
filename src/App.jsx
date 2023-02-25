@@ -1,13 +1,13 @@
-import Footer from "./components/Global/Fotter/Footer";
-import Navbar from "./components/Global/Navbvar/Navbar";
-import LandingPage from "./pages/LandingPage/LandingPage";
+import Footer from "./components/Global/Footer/Footer";
+import Navbar from "./components/Global/Navbar/Navbar";
+import Home from "./pages/Home/Home";
 
 function App() {
   return (
     <>
-      <Navbar/>
-      <LandingPage />
-      {/* <Footer/> */}
+      <Navbar />
+      <Home />
+      {/* <Footer /> */}
     </>
   );
 }

@@ -1,7 +1,7 @@
-import FeatureCard from "./FeatureContent";
-import ClockImage from "/imgs/Features/clock.svg";
-import LikeImage from "/imgs/Features/like.svg";
-import TruckImage from "/imgs/Features/truck.svg";
+import FeatureCard from "./FeatureCard";
+import ClockImage from "../../../assets/imgs/Home/Features/clock.svg";
+import LikeImage from "../../../assets/imgs/Home/Features/like.svg";
+import TruckImage from "../../../assets/imgs/Home/Features/truck.svg";
 export default function FeaturesContainer() {
   return (
     <div className="flex  sm:flex-row flex-col gap-12 items-center justify-center mt-16 mb-8">
