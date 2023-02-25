@@ -112,13 +112,13 @@ function Featured() {
     </div>
     <div className="grid grid-cols-12  w-[100%] mt-3 mb-4 ">
       <div className="col-span-12 relative  text-center">
-         <img src={Banner} className="rounded-[15px]" alt="" />
-         <div className="banner-desc flex justify-center flex-col absolute right-[15%]  font-[400] top-[20%] text-white " >
-          <h2 className="text-[30px]">CHOOSE YOUR FAVORITE</h2>
-          <span className="text-[25px] font-[300]">Discount <br /> Up To 30%</span>
+         <img src={Banner} className="max-md:object-bottom rounded-[15px] max-md:h-[20vh]" alt="" />
+         <div className="banner-desc flex justify-center flex-col absolute right-[15%]  font-[400] top-[20%] text-white max-md:right-5" >
+          <h2 className="text-[30px] max-md:text-[15px] ">CHOOSE YOUR FAVORITE</h2>
+          <span className="text-[25px] max-md:text-[13px] font-[300]">Discount <br /> Up To 30%</span>
           
          </div>
-         <button className="absolute right-[10%] p-2 top-[70%] rounded-[15px] bg-[#8BCA5F]">Shoub Now</button>
+         <button className="absolute right-[10%] max-md:right-[25%] p-2 top-[70%] rounded-[15px] bg-[#8BCA5F] max-md:w-[70px] max-md:text-[10px]">Shoub Now</button>
       </div>
      
     </div>
