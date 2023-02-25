@@ -1,15 +1,18 @@
 import CategoriesSlider from "./SectionOne/CategoriesSlider/CategoriesSlider";
-import FeaturesContainer from './SectionOne/Features/FeaturesContainer';
-import GridDeals from '../LandingPage/SectionOne/Features/GridDeals';
+import FeaturesContainer from "./SectionOne/Features/FeatureCards";
+import GridDeals from "../LandingPage/SectionOne/Features/GridDeals";
+import Container from "../Global/Container/Container";
+import Featured from "./Featured/Featured";
 
 function LandingSectionOne() {
   return (
     <>
-    
-      <CategoriesSlider />
-      <FeaturesContainer/>
-      <GridDeals/>
-    
+      <Container>
+        <CategoriesSlider />
+        <FeaturesContainer />
+        <GridDeals />
+        <Featured/>
+      </Container>
     </>
   );
 }

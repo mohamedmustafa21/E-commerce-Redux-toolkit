@@ -1,4 +1,4 @@
-import FeatureCard from "./FeatureCard";
+import FeatureCard from "./FeatureContent";
 import ClockImage from "/imgs/Features/clock.svg";
 import LikeImage from "/imgs/Features/like.svg";
 import TruckImage from "/imgs/Features/truck.svg";
