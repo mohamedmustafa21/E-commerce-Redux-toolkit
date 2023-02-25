@@ -5,6 +5,7 @@ import Product3 from "./imges/Untitled-14_2-removebg-preview.png";
 import Product4 from "./imges/Untitled-15_1-removebg-preview.png";
 import Product5 from "./imges/Untitled-16_1-removebg-preview.png";
 import Product6 from "./imges/Untitled-17_1-removebg-preview.png";
+import Banner from './imges/Untitled-1-Recovered 1.png'
 
 function Featured() {
   return (
@@ -108,6 +109,18 @@ function Featured() {
         </div>
         <span className="absolute text-[white] max-md:opacity-[.5] bg-[#EECA16] top-[5%] max-md:w-[35%] rounded-r-[15px] left-0 p-2 w-[4rem]">10%</span>
       </div>
+    </div>
+    <div className="grid grid-cols-12  w-[100%] mt-3 mb-4 ">
+      <div className="col-span-12 relative  text-center">
+         <img src={Banner} className="rounded-[15px]" alt="" />
+         <div className="banner-desc flex justify-center flex-col absolute right-[15%]  font-[400] top-[20%] text-white " >
+          <h2 className="text-[30px]">CHOOSE YOUR FAVORITE</h2>
+          <span className="text-[25px] font-[300]">Discount <br /> Up To 30%</span>
+          
+         </div>
+         <button className="absolute right-[10%] p-2 top-[70%] rounded-[15px] bg-[#8BCA5F]">Shoub Now</button>
+      </div>
+     
     </div>
     </>
   
