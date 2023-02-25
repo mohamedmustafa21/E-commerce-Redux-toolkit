@@ -25,7 +25,7 @@ function Hero() {
         loop
         pagination={{ clickable: true }}
         // scrollbar={{ draggable: true }}
-        onSlideChange={() => console.log("slide change")}
+        // onSlideChange={() => console.log("slide change")}
         controller={true}
         freeMode={true}
         className="mySwiper w-[100%] "

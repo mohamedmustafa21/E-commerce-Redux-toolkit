@@ -14,15 +14,24 @@ function Navbar() {
     { name: "Supermarket", link: "/supermarket" },
   ];
 
+  // Menu Open And Close
   let [open,setOpen] = useState(true);
 
-  
+  // Handle Change The Navbar Color when user scroll down
 
-  
+    const [color,setColor] = useState(false)
+    const changeCololr = () =>{
+      if(window.pageYOffset >= 90){
+        setColor(true)
+      }else{
+        setColor(false)
+      }
+    }
+    window.addEventListener('scroll',changeCololr)
 
   return (
     <div className="">
-      <div className="shadow-md w-full fixed top-0 left-0 z-10 ">
+      <div className={color ? 'bg-[rgba(72,122,72,0.9)] text-white   w-full fixed top-0 left-0 z-10': 'bg-transparent shadow-md w-full fixed top-0 left-0 z-10'} >
         <div className="flex  py-2 justify-between items-center">
           <div className="items-center md:px-10 px-7">
             <span className="mr-1 pt-1 flex  items-center">
@@ -51,7 +60,7 @@ function Navbar() {
             {links.map((link) => (
               <li
                 key={link.name}
-                className="md:ml-8 text-[15px] md:my-0 my-7 font-medium hover:text-[#6DD471]"
+                className="md:ml-8 text-[15px] md:my-0 my-7 font-medium hover:text-[#6DD471] max-md:text-black"
               >
                 <a href={link.link}>
                   {link.name} {link.icon ? <><i className={link.icon}></i></> : <></>}
