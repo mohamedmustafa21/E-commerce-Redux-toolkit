@@ -1,8 +1,8 @@
-import Image from "../../../public/imgs/GridDeals/test.png";
-import Image2 from "../../../public/imgs/GridDeals/test2.png";
-import Image3 from "../../../public/imgs/GridDeals/test3.png";
-import Image4 from "../../../public/imgs/GridDeals/test4.png";
-import Image5 from "../../../public/imgs/GridDeals/test5.png";
+import Image from "/imgs/GridDeals/test.png";
+import Image2 from "/imgs/GridDeals/test2.png";
+import Image3 from "/imgs/GridDeals/test3.png";
+import Image4 from "/imgs/GridDeals/test4.png";
+import Image5 from "/imgs/GridDeals/test5.png";
 
 export default function GridDeals() {
   return (
