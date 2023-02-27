@@ -2,12 +2,10 @@ import Logo from "../../assets/imgs/Logos/logo-pngwhite.png";
 
 function Footer() {
   return (
-<<<<<<< HEAD
     <div className='w-full h-[35vh] bg-[#2E4620] p-5  '>
       <div className='flex justify-around max-md:justify-between max-md:items-center py-5  max-md:relative'>
          <div className='p-5 mt-5  max-md:absolute max-md:top-[50%] max-md:left-0 '>
         <img className='w-32 max-md:w-16' src={Logo}  alt="" />
-=======
     <div className="w-full bg-[#2E4620] p-5 ">
       <div className="grid grid-cols-2 sm:grid-cols-10 mx-auto py-5 place-items-stretch max-md:relative ">
         <div className="col-span-1 sm:col-span-2 p-5 mt-5  sm:w-64 hidden sm:block max-md:absolute max-md:top-[50%] max-md:left-0">
@@ -56,7 +54,6 @@ function Footer() {
             <li>LinkedIn</li>
           </ul>
         </div>
->>>>>>> 7984262 (blah)
       </div>
     </div>
   );
