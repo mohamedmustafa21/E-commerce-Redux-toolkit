@@ -4,7 +4,7 @@ import LikeImage from "../../../assets/imgs/Home/Features/like.svg";
 import TruckImage from "../../../assets/imgs/Home/Features/truck.svg";
 export default function FeaturesContainer() {
   return (
-    <div className="flex  sm:flex-row flex-col gap-12 items-center justify-center mt-16 mb-8">
+    <div className="flex  sm:flex-row flex-col gap-12 items-center justify-center mt-5 mb-8">
       <FeatureCard
         text={"FREE SHIPPING US"}
         desc={"on all order over 1000EGP"}
