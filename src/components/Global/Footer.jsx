@@ -4,7 +4,7 @@ import Logo from '../../assets/imgs/Logos/logo-pngwhite.png'
 function Footer() {
   return (
     <div className='w-full h-[35vh] bg-[#2E4620] p-5  '>
-      <div className='flex justify-around max-md:justify-between py-5  items-stretch   max-md:relative'>
+      <div className='flex justify-around max-md:justify-between max-md:items-center py-5  max-md:relative'>
          <div className='p-5 mt-5  max-md:absolute max-md:top-[50%] max-md:left-0 '>
         <img className='w-32 max-md:w-16' src={Logo}  alt="" />
       </div>
