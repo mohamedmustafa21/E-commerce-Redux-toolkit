@@ -3,7 +3,7 @@ import moment from 'moment';
 import { useState ,useEffect} from 'react';
 
 
-function DealOfWeek() {
+function DealOfWeeks() {
    
         const [days, setDays] = useState(0);
         const [hours, setHours] = useState(0);
@@ -54,4 +54,4 @@ function DealOfWeek() {
   )
 }
 
-export default DealOfWeek
+export default DealOfWeeks
