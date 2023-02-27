@@ -26,8 +26,8 @@ function DealOfWeek() {
   }, []);
   return (
     <div className='flex justify-center items-center deals-ofWeek h-96 bg-gradient-to-r from-[#B2F5C0] to-[#9CC77F] w-[full] rounded-md'>
-        <div className='bg-white flex justify-center items-center flex-col w-[30%] h-[70%] rounded-[50%]'>
-            <h1 className='mb-5 font-bold text-xl'>Deal Of The Week</h1>
+        <div className='bg-white max-md:w-[70%] flex justify-center items-center flex-col w-[30%] h-[70%] rounded-[50%]'>
+            <h1 className='mb-5 font-bold text-xl text-center'>Deal Of The Week</h1>
             <div className='flex justify-evenly w-full font-semibold'>
                   <div className='flex flex-col justify-center items-center  '>
             <h1 >{days}</h1>
