@@ -5,6 +5,17 @@
 *,
 *::before,
 *::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  line-height: 1.6;
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  min-width: 100%;
+}
+
+body {
+  font-family: "Golos Text", sans-serif;
 }

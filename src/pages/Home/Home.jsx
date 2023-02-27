@@ -1,4 +1,4 @@
-import Container from "../../components/Global/Container/Container";
+import Container from "../../components/Global/Container";
 import CategoriesSlider from "../../components/Home/CategoriesSlider";
 import Featured from "../../components/Home/Featured/Featured";
 import FeaturesContainer from "../../components/Home/Features/FeaturesContainer";
@@ -8,7 +8,6 @@ function Home() {
   return (
     <>
       <Hero />
-
       <Container>
         <CategoriesSlider />
         <FeaturesContainer />

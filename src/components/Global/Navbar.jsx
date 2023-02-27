@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Logo from "../../../assets/imgs/Home/logo-png.png";
+import Logo from "../../assets/imgs/Home/logo-png.png";
 
 function Navbar() {
   let links = [
@@ -20,14 +20,13 @@ function Navbar() {
 
   const [color, setColor] = useState(false);
   const changeColor = () => {
-    if (window.pageYOffset >= 90){
+    if (window.pageYOffset >= 90) {
       setColor(true);
-    } else{
+    } else {
       setColor(false);
     }
-  }
+  };
 
-  
   window.addEventListener("scroll", changeColor);
 
   return (
