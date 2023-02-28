@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Logo from "../../assets/imgs/Home/logo-png.png";
+import LogoWhite from "../../assets/imgs/Home/logo-pngwhite.png";
+
 
 function Navbar() {
   let links = [
@@ -42,9 +44,9 @@ function Navbar() {
           <div className="items-center md:px-10 px-7">
             <span className="mr-1 pt-1 flex  items-center">
               <div className=" ">
-                <div className="logo flex items-center md:px-10 px-7">
+                 <div className="logo flex items-center md:px-10 px-7">
                   <span className="mr-1 pt-1 flex  items-center">
-                    <img src={Logo} className="w-24" alt="" />
+                    <img src={color ? LogoWhite : Logo } className="w-24" alt="" />
                   </span>
                 </div>
               </div>
