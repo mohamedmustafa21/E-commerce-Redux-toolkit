@@ -5,50 +5,34 @@ import Product4 from "./imgs/Untitled-15_1-removebg-preview.png";
 import Product5 from "./imgs/Untitled-16_1-removebg-preview.png";
 import Product6 from "./imgs/Untitled-17_1-removebg-preview.png";
 import Card from "../../Global/Card";
+import { useNavigate } from "react-router-dom";
 
-function SkinCare() {
+function SkinCare({ isLoading, products, singleProducts, getInfoId }) {
+  const navigate = useNavigate()
+
   return (
     <>
       <h1 className="font-bold text-[25px] max-md:text-center mb-4 mt-8">
         Skin Care
       </h1>
       <div className="grid grid-cols-12 bg-[#BEDCAB] px-5 gap-4 rounded-sm mb-8">
-        <Card
-          cardImg={Product1}
-          cardTitle={"Lenovo idea pad 315ITL6 15.6 Inch"}
-          cardPrice={"EGP 19699.00"}
-          cardDiscount={"10%"}
-        />
-        <Card
-          cardImg={Product2}
-          cardTitle={"Lenovo idea pad 315ITL6 15.6 Inch"}
-          cardPrice={"EGP 19699.00"}
-          cardDiscount={"10%"}
-        />{" "}
-        <Card
-          cardImg={Product3}
-          cardTitle={"Lenovo idea pad 315ITL6 15.6 Inch"}
-          cardPrice={"EGP 19699.00"}
-          cardDiscount={"10%"}
-        />{" "}
-        <Card
-          cardImg={Product4}
-          cardTitle={"Lenovo idea pad 315ITL6 15.6 Inch"}
-          cardPrice={"EGP 19699.00"}
-          cardDiscount={"10%"}
-        />{" "}
-        <Card
-          cardImg={Product5}
-          cardTitle={"Lenovo idea pad 315ITL6 15.6 Inch"}
-          cardPrice={"EGP 19699.00"}
-          cardDiscount={"10%"}
-        />
-        <Card
-          cardImg={Product6}
-          cardTitle={"Lenovo idea pad 315ITL6 15.6 Inch"}
-          cardPrice={"EGP 19699.00"}
-          cardDiscount={"10%"}
-        />
+        {products
+          .filter((product) => product.category === "skincare")
+          .slice(0, 6)
+          .map((product) => (
+            <Card
+            onClick={()=>{
+              navigate(`filter/${product.category}/${product.id}`)
+            }}
+              isRate={true}
+              key={product.id}
+              cardImg={product.thumbnail}
+              className="w-[20px]"
+              cardTitle={product.title.substring(0, 20)}
+              cardPrice={product.price + " $"}
+              // cardDiscount={"10%"}
+            />
+          ))}
       </div>
     </>
   );

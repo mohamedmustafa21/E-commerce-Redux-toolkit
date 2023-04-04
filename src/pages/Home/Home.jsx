@@ -9,21 +9,45 @@ import Hero from "../../components/Home/Hero";
 import ShopCategory from "../../components/Home/ShopByCategory/ShopCategory";
 import SkinCare from "../../components/Home/SkinCare/SkinCare";
 import DealOfWeeks from './../../components/Home/DealOfWeek/DealOfWeeks';
+import { useDispatch , useSelector} from "react-redux";
+import { getData,singleProducts } from '../../store/api.slice';
+import { useEffect,Fragment } from "react";
+import { Link } from 'react-router-dom';
+
 function Home() {
+  const {isLoading,products,error } = useSelector((state) => state.products)
+
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    dispatch(getData())
+  }, [dispatch])
+
+  const getInfoId = (id) => {
+    const selectedProduct = products.filter((item) => item.id === id);
+    // console.log(selectedProduct);
+}
+
   return (
     <>
-      <Hero />
+    <Fragment>
+      {error && (
+        <div className="font-[cairo] bg-[red] h-[100vh] relative text-center text-[white] text-[30px]">
+         <h1 className="absolute top-[50%]  text-center w-[100%]">حدث خطأ ما في السيرفر</h1> 
+        </div>
+      )}
+       <Hero isLoading={isLoading} products={products} singleProducts={singleProducts} getInfoId={getInfoId}/>
       <Container>
-        <CategoriesSlider />
+        <CategoriesSlider isLoading={isLoading} products={products} singleProducts={singleProducts} getInfoId={getInfoId}/>
         <FeaturesContainer />
         <GridDeals />
-        <Featured />
-        <SkinCare />
-        <ShopCategory />
+        <Featured isLoading={isLoading} products={products} singleProducts={singleProducts} getInfoId={getInfoId}/>
+        <SkinCare isLoading={isLoading} products={products} singleProducts={singleProducts} getInfoId={getInfoId}/>
+        <ShopCategory isLoading={isLoading} products={products} singleProducts={singleProducts} getInfoId={getInfoId}/>
         <DealOfWeeks/>
-        <FavBrands />
+        <FavBrands isLoading={isLoading} products={products} singleProducts={singleProducts} getInfoId={getInfoId}/>
       </Container>
-      <Footer />
+    </Fragment>
+     
     </>
   );
 }
