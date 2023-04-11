@@ -68,17 +68,26 @@ export const singleProducts = createAsyncThunk(
         cartTotalQuantity: 0,
         cartTotalAmount: 0,
         counter: 1,
+        message: '',
       };
+      const favState = {
+        cartItems: [],
+        cartTotalQuantity: 0,
+        counter: 1,
+        message: '',
+        status: null
+      }
+      
       const updateCartTotals = (state) => {
-        const cartItems = state.addToCart.cartItems;
-        state.addToCart.cartTotalQuantity = cartItems.length;
-        state.addToCart.cartTotalAmount = cartItems.reduce((acc, item) => {
+        const cartItems = state.buyCart.cartItems;
+        state.buyCart.cartTotalQuantity = cartItems.length;
+        state.buyCart.cartTotalAmount = cartItems.reduce((acc, item) => {
           return acc + item.price;
-        }, 0) * state.addToCart.counter; // استخدام القيمة في الحساب
+        }, 0) * state.buyCart.counter; // استخدام القيمة في الحساب
       };
 const apiSlice = createSlice({
     name: 'book',
-    initialState: { products: [], productsSearch :[] ,isLoading: false, error: null, productInfo: null, userPath: '', categoryFilter: null, addToCart:cartState },
+    initialState: { products: [], productsSearch :[] ,isLoading: false, error: null, productInfo: null, userPath: '', categoryFilter: null , buyCart:cartState ,favCart:favState,favMassege:favState.message},
     reducers: {
         // تحديث المسار
         setUserPath: (state, action) => {
@@ -90,17 +99,41 @@ const apiSlice = createSlice({
           state.categoryFilter = action.payload;
         },
         addToCart: (state, action) => {
-          const tempProduct = { ...action.payload, cartQuantity: 1 };
-          const index = state.addToCart.cartItems.findIndex(
-            (item) => item.id === tempProduct.id
-          );
-          if (index === -1) {
-            state.addToCart.cartItems.push(tempProduct);
-          } else {
-            console.log("Item already added to cart");
-          }
-          updateCartTotals(state);
-        },
+            const tempProduct = { ...action.payload, cartQuantity: 1 };
+            const index = state.buyCart.cartItems.findIndex(
+              (item) => item.id === tempProduct.id
+            );
+            if (index === -1) {
+              state.buyCart.cartItems.push(tempProduct);
+              state.cartMassege = "Product has been successfully added to Your cart.";
+
+            } else {
+              state.cartMassege = "Item has been Remove From Cart ";
+              state.buyCart.cartItems.splice(tempProduct);
+            }
+            updateCartTotals(state);
+          },
+
+          addToFav: (state, action) => {
+            const tempProduct = { ...action.payload, cartQuantity: 1 };
+            const index = state.favCart.cartItems.findIndex(
+              (item) => item.id === tempProduct.id
+            );
+            if (index === -1) {
+              state.favCart.cartItems.push(tempProduct);
+              state.cartMassege = "Product has been successfully added to Your Favourite.";
+              state.status = true;
+              
+
+            } else {
+              state.favMassege = "Item has been remove From Cart";
+              state.favCart.cartItems.splice(tempProduct);
+              state.status = false;
+              
+            }
+            // updateCartTotals(state);
+          },
+        
       },
     
     extraReducers: {
@@ -177,6 +210,6 @@ const apiSlice = createSlice({
 
 
 
-export const { setUserPath,setCatFilter,setProductInfo,addToCart } = apiSlice.actions;
+export const { setUserPath,setCatFilter,setProductInfo,addToCart,addToFav,favCart,buyCart } = apiSlice.actions;
 
 export default apiSlice.reducer;

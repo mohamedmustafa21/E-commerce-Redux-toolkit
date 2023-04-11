@@ -6,6 +6,7 @@ import LogoWhite from "../../assets/imgs/Home/logo-pngwhite.png";
 import { useSelector, useDispatch } from "react-redux";
 import bgSideBar from "../../assets/imgs/Sidebar/pexels-karolina-grabowska-5650028.jpg"
 
+
 function Navbar() {
   const {
     categoryFilter,
@@ -13,12 +14,23 @@ function Navbar() {
     productInfo,
     products,
     isLoading,
-    addToCart,
+    buyCart,
+    error,
+    favCart
   } = useSelector((state) => state.products);
   const dispatch = useDispatch();
-
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchOpen, setSearchOpen] = useState(false);
+
+  const [showInput, setShowInput] = useState(false);
+
+  const handleSearchClick = () => {
+    setShowInput(true);
+  };
+
+  const handleCloseClick = () => {
+    setShowInput(false);
+  };
+
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
@@ -26,7 +38,9 @@ function Navbar() {
   };
 
 
-  const cartItems = addToCart;
+  const cartItems = buyCart;
+  const favItems = favCart;
+
   // useEffect(() => {
 
   //   dispatch(getData());
@@ -59,12 +73,15 @@ function Navbar() {
   window.addEventListener("scroll", changeColor);
 
   const [siderBar, setSideBar] = useState(false);
+  const [favBar, setfavBar] = useState(false);
+
   // useEffect(() => {
   //   if (searchTerm) {
   //     dispatch(searchByCategory(searchTerm.toLowerCase()));
   //   }
   // }, [dispatch, searchTerm]);
 
+ 
   
   return (
     <>
@@ -95,79 +112,39 @@ function Navbar() {
             </span>
           </div>
 
-          <div className="items-center px-7 flex  max-md:mr-[50px]">
-            <div
-             
-            >
-              {/* {
-                searchOpen ? 
-                <>
-                 <form>
-                <label
-                  htmlFor="default-search"
-                  className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
-                >
-                  Search
-                </label>
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                    <svg
-                      aria-hidden="true"
-                      className="w-5 h-5 text-gray-500 dark:text-gray-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <input
-                    type="search"
-                    id="default-search"
-                    className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Search Mockups, Logos..."
-                    required
-                    value={searchTerm}
-                    onChange={handleSearch}
-                  />
-                 
-                </div>
-              </form>
-                </>:<></>
-              } */}
-             
-              {" "}
-              <i 
-              //  onClick={() => {
-              //   setSearchOpen(!searchOpen)
-              // }}
-              className={`${searchOpen ? "":"fa-solid fa-magnifying-glass mr-2"}`}></i>
-            </div>
-            {/* <i className="fa-regular fa-heart mr-2"></i> */}
-            <div>
-              <i
-                onClick={() => setSideBar(!siderBar)}
-                className={`fa-solid fa-cart-shopping ml-2 cursor-pointer rotate-12 ${
-                  color ? "text-white" : "text-[#2da252]"
-                } text-[25px]  relative`}
-              >
-                {/* <p className="absolute top-3 right-2 text-[red]">0</p> */}
-              </i>
-            </div>
-            {/* <i className="fa-solid fa-user-plus"></i> */}
-          </div>
-                
-<div
-  className={`sidebar h-[100vh] overflow-y-scroll overflow-x-hidden max-md:w-[50vw]  w-[30vw] bg-cover bg-no-repeat bg-center bg-opacity-50 z-50 absolute top-0 right-0 transform  ${
-    siderBar ? "" : "translate-x-full"
-  } transition-transform duration-300 ease-in-out`}
-  style={{ backgroundImage: `url(${bgSideBar})` }}
+         <div className="items-center px-7 flex  max-md:mr-[50px]">
+      <div>
+        
+        {/* <i className="fa-solid fa-magnifying-glass mr-2" onClick={handleSearchClick}></i> */}
+      </div>
+      {/* {showInput && (
+        <div>
+          <input type="text" placeholder="Search..." className="mr-2" />
+          <i className="fa-solid fa-times-circle" onClick={handleCloseClick}></i>
+        </div>
+      )} */}
+      <div>
+      <i onClick={()=>{
+        setfavBar(!favBar)
+        console.log(favBar)
+
+      }} className="fa-solid fa-heart text-[25px] text-[red]"></i>
+        <i
+          onClick={() => setSideBar(!siderBar)}
+          className={`fa-solid fa-cart-shopping ml-2 cursor-pointer rotate-12 ${
+            color ? "text-white" : "text-[#2da252]"
+          } text-[25px]  relative`}
+        >
+          {/* <p className="absolute top-3 right-2 text-[red]">0</p> */}
+        </i>
+      </div>
+      
+    </div>
+
+                {/* Cart Side Bar */}
+    <div
+  className={`sidebar transform ${siderBar ? "" : "hidden translate-x-full"}  h-[100vh] overflow-y-scroll overflow-x-hidden  max-md:w-[70vw]  w-[30vw] bg-cover bg-no-repeat bg-center bg-opacity-50 z-50 absolute top-0 right-0   `}
+  style={{ backgroundImage: `url(${bgSideBar})`, transition: "transform 0.3s ease-in-out" }}
 >
   <div className="float-right" onClick={() => setSideBar(!siderBar)}>
     <i className="fa-solid fa-xmark text-black text-[25px] p-5 font-[500] cursor-pointer"></i>
@@ -180,7 +157,7 @@ function Navbar() {
       <>
         {cartItems.cartItems.map((item) => (
           <>
-            <div className="grid grid-cols-2 justify-between items-center">
+            <div key={item.id} className="grid grid-cols-2 justify-between items-center">
               <div>
                 <img
                   src={item.thumbnail}
@@ -193,7 +170,7 @@ function Navbar() {
                 <p>{item.price} $</p>
               </div>
             </div>
-            <div></div>
+
           </>
         ))}
       </>
@@ -202,10 +179,56 @@ function Navbar() {
     )}
   </div>
   <div className="w-full flex justify-center text-black ">
-    <p className="text-[20px font-bold">
-      Total: {cartItems.cartTotalAmount}$
+    <p className="text-[20px font-bold]">
+      Total: {buyCart.cartTotalAmount}$
     </p>
   </div>
+</div>
+{/* End */}
+{/* Favourite Car */}
+<div
+  className={`sidebar transform ${favBar ? "" : "hidden translate-x-full"}  h-[100vh] overflow-y-scroll overflow-x-hidden  max-md:w-[70vw]  w-[30vw] bg-cover bg-no-repeat bg-center bg-opacity-50 z-50 absolute top-0 right-0   `}
+  style={{ backgroundImage: `url(${bgSideBar})`, transition: "transform 0.3s ease-in-out" }}
+>
+  <div className="float-right" onClick={() => setfavBar(!favBar)}>
+    <i className="fa-solid fa-xmark text-black text-[25px] p-5 font-[500] cursor-pointer"></i>
+  </div>
+  <div className="w-full flex justify-center">
+    <img className="w-[150px] h-auto" src={Logo} alt="" />
+  </div>
+  <h1 className="text-center uppercase mt-2 font-[700]">Your Favourite Products </h1>
+  <div className="text-white mt-[5%] flex-col justify-center items-center">
+    {favItems ? (
+      <>
+    
+        {favItems.cartItems.map((item) => (
+          <>
+            <div key={item.id} className="grid grid-cols-2 justify-between items-center">
+              <div>
+                <img
+                  src={item.thumbnail}
+                  className="w-[100px] rounded-[50%]"
+                  alt=""
+                />
+              </div>
+              <div className=" flex-col items-center justify-center text-center text-black">
+                <p className="">{item.title}</p>
+                <p>{item.price} $</p>
+              </div>
+            </div>
+
+          </>
+        ))}
+      </>
+    ) : (
+      <>''</>
+    )}
+  </div>
+  {/* <div className="w-full flex justify-center text-black ">
+    <p className="text-[20px font-bold]">
+      Total: {buyCart.cartTotalAmount}$
+    </p>
+  </div> */}
 </div>
 
         </div>

@@ -71,8 +71,8 @@ if (!categoryFilter) {
 </form>
 
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <h1 className="col-span-full mb-8">{userPath}</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+        {/* <h1 className="col-span-full mb-8">{userPath}</h1> */}
         {filteredProducts.map((item,index) => (
           <div
             key={item.id}
@@ -81,7 +81,7 @@ if (!categoryFilter) {
             <div className="relative">
                <a href="#">
               <img
-                className="w-full h-48  object-center rounded-t-lg relative"
+                className="w-full h-48  object-contain rounded-t-lg relative"
                 src={item.thumbnail}
                 alt=""
               />
