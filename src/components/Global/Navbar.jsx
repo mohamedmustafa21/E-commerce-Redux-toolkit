@@ -137,6 +137,9 @@ function Navbar() {
         >
           {/* <p className="absolute top-3 right-2 text-[red]">0</p> */}
         </i>
+        <Link to="/login" onClick={()=>{
+          
+        }} className="fa-solid fa-arrow-right-to-bracket text-[25px] ml-2"></Link>
       </div>
       
     </div>
