@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { createAction } from "@reduxjs/toolkit";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export const setSelectedProduct = createAction("SET_SELECTED_PRODUCT");
 export const setSelectedCategory = createAction("SET_SELECTED_CATEGORY");
@@ -14,7 +15,7 @@ export const getData = createAsyncThunk(
         try {
             const res = await fetch('https://dummyjson.com/products')
             const data = await res.json();
-            return data.products;
+            return data?.products;
         } catch (error) {
             return rejectWithValue(error.message);
         }
@@ -64,7 +65,9 @@ export const singleProducts = createAsyncThunk(
     })
 
     const cartState = {
-        cartItems: [],
+        cartItems: localStorage.getItem("CartItems")
+        ? JSON.parse(localStorage.getItem("CartItems"))
+        :[],
         cartTotalQuantity: 0,
         cartTotalAmount: 0,
         counter: 1,
@@ -106,13 +109,24 @@ const apiSlice = createSlice({
             if (index === -1) {
               state.buyCart.cartItems.push(tempProduct);
               state.cartMassege = "Product has been successfully added to Your cart.";
-
+                toast.success("تمت اضافه المنتج الي السلة ",{
+                    position:"bottom-right",
+                })
             } else {
               state.cartMassege = "Item has been Remove From Cart ";
               state.buyCart.cartItems.splice(tempProduct);
+              toast.error("تم حذف المنتج من السلة",{
+                position:"bottom-right",
+            })
             }
             updateCartTotals(state);
+
+            localStorage.setItem("CartItems",JSON.stringify(state.buyCart.cartItems))
+
           },
+        //   removeFromCart:(state,action){
+        //     const next
+        //   }
 
           addToFav: (state, action) => {
             const tempProduct = { ...action.payload, cartQuantity: 1 };

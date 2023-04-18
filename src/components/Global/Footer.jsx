@@ -2,7 +2,7 @@ import Logo from "../../assets/imgs/Logos/logo-pngwhite.png";
 
 function Footer() {
   return (
-    <div className="w-full bg-[#2E4620] p-5">
+    <div className="w-full bg-[#2E4620] p-5 ">
       <div className="grid grid-cols-2 sm:grid-cols-10 mx-auto py-5 place-items-stretch max-md:relative ">
         <div className="col-span-1 sm:col-span-2 px-5 mt-5 sm:w-64 hidden lg:block max-md:absolute max-md:top-[50%] max-md:left-0">
           <img className="w-full" src={Logo} alt="" />

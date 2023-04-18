@@ -8,7 +8,9 @@ function PrivatePages() {
 
     const { userData } = useSelector((state) => state.authSlice);
 
-    let auth =userData.accessToken
+    let auth = userData.email ? userData.email : localStorage.getItem('userData') ? JSON.parse(localStorage.getItem('userData')).email : null;
+   
+
 
 
   return (

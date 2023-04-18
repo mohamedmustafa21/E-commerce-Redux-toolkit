@@ -131,7 +131,7 @@ function SingleProducts() {
   const { categoryFilter, userPath, productInfo, products, buyCart, favCart } =
     useSelector((state) => state.products);
   const location = useLocation();
-
+    // const productDaitls = productInfo || localStorage.get
   const userselect = location.pathname;
   const lastPart = userselect.split("/").pop();
   const lastNumber = parseInt(lastPart);
@@ -151,6 +151,9 @@ function SingleProducts() {
     if (productInfo && buyCart) {
       setAddDone(checkProductCode(productInfo.id, buyCart.cartItems));
     }
+    // if(localStorage.getItem('CartItems')){
+    //   setAddDone(checkProductCode())
+    // }
   }, [productInfo, favCart, buyCart]);
   useEffect(() => {
     dispatch(singleProducts(lastNumber));
@@ -258,7 +261,7 @@ function SingleProducts() {
               </div>
               <hr />
               <div className="flex flex-col items-center justify-center ">
-                <div className="p-3 bg-[#D9D9D9] rounded-lg mt-3 text-black">
+                {/* <div className="p-3 bg-[#D9D9D9] rounded-lg mt-3 text-black">
                   <button onClick={decrement}>
                     <i className="fa-solid fa-trash-can mr-2 cursor-pointer"></i>
                   </button>
@@ -266,7 +269,7 @@ function SingleProducts() {
                   <button onClick={increment}>
                     <i className="fa-sharp fa-solid fa-plus cursor-pointer"></i>
                   </button>
-                </div>
+                </div> */}
                 <button
                   onClick={() => {
                     handleAddToCart(productInfo);
